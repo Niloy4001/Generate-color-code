@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+
+        .hexCode {
+            width: 140px;
+            height: 40px;
+            color: black;
+            background: #fff;
+            margin: 0 auto;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 170px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 120px;
+            height: 20px;
+            color: black;
+            background: #fff;
+            position: absolute;
+            left: 396px;
+            top: 221px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            font-size: 15px;
+            user-select: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hexCode">#000000</div>
+    <Change class="btn" onclick="changeColor()">Change Color</button>
+        <script>
+            function changeColor() {
+                let hexCode = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+                var hash = '#';
+
+                for (let i = 0; i < 6; i++) {
+                    let number = Math.round(Math.random() * 15);
+                    hash = hash + hexCode[number]
+                }
+
+                document.body.style.background = hash;
+                let hex = document.querySelector('.hexCode');
+                hex.innerHTML = hash;
+                hex.style.color = hash;
+                let button = document.querySelector('.btn');
+                button.style.color = hash
+                console.log(button)
+            }
+        </script>
+</body>
+
+</html>
